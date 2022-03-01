@@ -26,12 +26,8 @@
                 lotto[5] = luckyBall;
 
                 document.write("<br>Winning numbers and winning lucky ball: ");
-                for (let i = 0; i < 5; i++) {
-                        let num = Math.random() * 49;
-                        winners[i] = num.toFixed(0);
-                }
-                winners.sort();
-                let winningBall = (Math.random() * 19).toFixed(0);
+                winners = [12, 15, 24, 35, 48];
+                let winningBall = 3; 
                 winners[5] = winningBall;
                 document.write(" " + winners);
                 let match = false;
