@@ -1,0 +1,14 @@
+h1 {
+        font-size: 48px;
+        font-family: sans-serif;
+        background-color: black;
+        width: fit-content;
+        padding: 1% 1% 1% 1%;
+
+}
+h1 span {
+        color: red;
+}
+div#block2 {
+        font-size: 24px;
+}

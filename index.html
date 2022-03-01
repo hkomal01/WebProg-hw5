@@ -1,0 +1,89 @@
+<html>
+<head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <title>
+                Lottery Simulator
+        </title>
+</head>
+<body>
+        <div id="block1" ><h1><span id="one">Lottery</span> <span id="two">Simulator</span></h1></div>
+        <div id="block2"><script language="javascript">
+                lotto = [0,0,0,0,0];
+                winners = [0,0,0,0,0];
+                document.write("Pick prior to sorting: ");
+                for (let i = 0; i < 5; i++) {
+                        let num = Math.random() * 49;
+                        lotto[i] = num.toFixed(0);
+                }
+                document.write(" " + lotto);
+                lotto.sort();
+                document.write("<br>Pick after to sorting: ");
+                document.write(" " + lotto);
+                
+                let luckyBall = (Math.random() * 19).toFixed(0);
+                document.write("<br>Lucky Ball: " + luckyBall);
+                lotto[5] = luckyBall;
+
+                document.write("<br>Winning numbers and winning lucky ball: ");
+                for (let i = 0; i < 5; i++) {
+                        let num = Math.random() * 49;
+                        winners[i] = num.toFixed(0);
+                }
+                winners.sort();
+                let winningBall = (Math.random() * 19).toFixed(0);
+                winners[5] = winningBall;
+                document.write(" " + winners);
+                let match = false;
+
+                let counter = 0;
+                for (let i = 0; i < 5; i++) {
+                        for (let j = 0; j < 5; j++) {
+                                if (lotto[i] == winners[j]) {
+                                        counter++;
+                                }
+                        }
+                }
+                if (counter == 0) {
+                        document.write("<br>" + " No numbers matched.");
+                } else {
+                        document.write("<br>" + counter + " numbers matched!")
+                }
+                
+
+                if (winners[5] == lotto[5]) {
+                        document.write("<br>Lucky ball matched!");
+                        match = true;
+                } else {
+                        document.write("<br>Lucky ball did not match.");
+                }
+
+                document.write("<br>");
+                if (match && counter == 0) {
+                        document.write("You won $4!");
+                } else if (match && counter == 1) {
+                        document.write("You won $6!");
+                } else if (!match && counter == 2) {
+                        document.write("You won $3!");
+                } else if (match && counter == 2) {
+                        document.write("You won $25!");
+                } else if (!match && counter == 3) {
+                        document.write("You won $20!");
+                } else if (match && counter == 3) {
+                        document.write("You won $150!");
+                } else if (!match && counter == 4) {
+                        document.write("You won $200!");
+                } else if (match && counter == 4) {
+                        document.write("You won $5,000!");
+                } else if (!match && counter == 5) {
+                        document.write("You won $25,000 a YEAR for LIFE!");
+                } else if (match && counter == 5) {
+                        document.write("You won $7,000 a WEEK for LIFE!");
+                } else {
+                        document.write("You did not win.");
+                }
+
+        </script></div>
+</body>
+
+</html>
